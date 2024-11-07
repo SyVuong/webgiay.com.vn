@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài thực hành</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #00ffff;
+            display: flex;
+        }
+
+        .menu > li {
+            position: relative;
+        }
+
+        .menu > li > a {
+            display: block;
+            color: rgba(0, 0, 0, 0.952);
+            padding: 15px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu > li > a:hover {
+            background-color: #00ffff;
+            color: blue;
+        }
+
+        .submenu {
+            list-style-type: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 0;
+            margin: 0;
+            background-color: #00ffff;
+            display: none;
+            z-index: 1000;
+        }
+
+        .submenu li a {
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .menu > li:hover .submenu {
+            display: block;
+        }
+
+        .submenu li a:hover {
+            background-color: #00ffff;
+            color: blue;
+        }
+
+        .logo {
+            width: 100%;
+            height: 210px;
+            overflow: hidden;
+            position: relative;
+            background-color: #00ffff;
+            top: 50%;
+        }
+
+        .moving-image {
+            position: absolute;
+            top: 60%;
+            transform: translateY(-50%);
+            width: 250px;
+            height: auto;
+            animation: moveRightToLeft 10s linear infinite;
+        }
+
+        @keyframes moveRightToLeft {
+            from {
+                left: 100%;
+            }
+            to {
+                left: -250px;
+            }
+        }
+
+       
+        .cta-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+            cursor: pointer;
+        }
+
+        
+        .suggestion {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+            color: #1100ff;
+        }
+
+        .feedback-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .feedback-container input, .feedback-container textarea {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .feedback-container textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .submit-button {
+    align-self: center; /* Căn nút vào giữa khung phản hồi */
+    margin-top: 10px;
+    background-color: gray;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+   
+    text-align: right; /* Căn chữ "Gửi ý kiến" về bên phải trong nút */
+}
+
+
+        .submit-button:hover {
+            background-color: darkgray;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href=""><strong>Trang chủ</strong></a></li>
+        <li><a href=""><strong>Giới thiệu</strong></a></li>
+        <li>
+            <a href=""><strong>Sản phẩm</strong></a>
+            <ul class="submenu">
+                <li><a href="">Giày Nam</a></li>
+                <li><a href="">Giày Nữ</a></li>
+            </ul>
+        </li>
+        <li><a href=""><strong>Hỏi đáp</strong></a></li>
+        <li><a href=""><strong>Liên hệ</strong></a></li>
+    </ul>
+
+    <div class="logo">
+        <img src="./giay-gucci-cao-cap-8.jpg" alt="Moving Image" class="moving-image">
+    </div>
+    <p class="suggestion"><strong>GÓP Ý</strong></p>
+    <div class="feedback-container">
+        <input type="text" placeholder="Họ và tên">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Ý kiến của bạn"></textarea>
+        <button class="submit-button">Gửi ý kiến</button>
+    </div>
+
+</body>
+</html>
